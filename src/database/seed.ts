@@ -1,10 +1,13 @@
 import dataSource from "../data-source";
+import { seedLoanProducts } from "./seeders/seed-loan-products";
 import { seedProducts } from "./seeders/seed-products";
 
 async function runSeed() {
     await dataSource.initialize();
 
     await seedProducts(dataSource);
+
+    await seedLoanProducts(dataSource)
 
     await dataSource.destroy();
 }
