@@ -9,6 +9,6 @@ export default new DataSource({
     password: String(process.env.DB_PASSWORD),
     database: process.env.DB_NAME,
     entities: ['src/**/*.entity.ts'],
-    migrations: ['src/migrations/*.ts'],
+    migrations: ['src/database/migrations/*.ts'],
     synchronize: false,
 })
