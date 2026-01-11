@@ -20,21 +20,21 @@ export class LoanProductEntity {
   @Column({ nullable: true })
   description: string;
 
-  @Column("numeric")
+  @Column({ name: "min_amount", type: "numeric" })
   minAmount: number;
 
-  @Column("numeric")
+  @Column({ name: "max_amount", type: "numeric" })
   maxAmount: number;
 
-  @Column()
+  @Column({ name: "interest_type" })
   interestType: string;
 
-  @Column("numeric")
+  @Column({ name: "admin_fee", type: "numeric" })
   adminFee: number;
 
   @Column()
   status: string;
 
-  @OneToMany(() => LoanTenorEntity, (t) => t.loanProduct)
+  @OneToMany(() => LoanTenorEntity, (tenor) => tenor.loanProduct)
   tenors: LoanTenorEntity[];
 }

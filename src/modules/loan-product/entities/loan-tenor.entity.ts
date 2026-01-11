@@ -10,13 +10,13 @@ export class LoanTenorEntity {
   @JoinColumn({ name: "loan_product_id" })
   loanProduct: LoanProductEntity;
 
-  @Column() 
+  @Column({name:"tenor_months" ,type:"numeric"}) 
   tenorMonths: number;
 
-  @Column("numeric")
+  @Column({name:"interest_rate" ,type:"numeric"}) 
   interestRate: number;
 
-  @Column("numeric")
+  @Column({name:"late_fee_rate" ,type:"numeric"}) 
   lateFeeRate: number;
 
   @Column()

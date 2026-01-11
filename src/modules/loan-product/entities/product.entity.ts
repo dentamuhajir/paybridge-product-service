@@ -11,15 +11,15 @@ export class ProductEntity {
   @Column()
   name: string;
 
-  @Column()
+  @Column({name: "product_type"})
   productType: string;
 
   @Column()
   status: string;
 
-  @CreateDateColumn()
+  @CreateDateColumn({name: "created_at"})
   createdAt: Date;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({name: "updated_at"})
   updatedAt: Date;
 }
