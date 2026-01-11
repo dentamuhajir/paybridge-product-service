@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { LoanProductModule } from './modules/loan-product/loan-product.module';
 
 @Module({
   imports: [
@@ -21,7 +22,8 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
         autoLoadEntities: true,
         synchronize: false,
       }),
-    })
+    }),
+    LoanProductModule
   ],
   controllers: [AppController],
   providers: [AppService],
