@@ -1,3 +1,5 @@
+import './infrastructure/observability/telemetry' 
+
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ApiExceptionFilter } from './shared/exception/api-exception.filter';
